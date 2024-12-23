@@ -29,9 +29,7 @@ const Nav = () => {
           <Link className="hover:text-cyan-500" to="/Contact">
             Contact
           </Link>
-          <Link className="hover:text-cyan-500" to="/Allpage">
-            Skils
-          </Link>
+         
         </div>
 
         {/* Mobile Menu Toggle */}
