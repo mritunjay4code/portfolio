@@ -1,19 +1,31 @@
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import { IoMdContact } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Home = () => {
   return (
     <>
-      <div className="welcome-container w-full h-[100vh] relative " id="home">
-        <div className="bg-gray-700 text-white h-screen flex items-center justify-center">
+      <div className="welcome-container relative ">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        >
+          <source src="bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Content */}
+        <div className="text-white flex items-center justify-center relative z-10">
           <div className="container flex items-center justify-between mx-20">
             {/* Left Section */}
-            <div className="w-1/2">
-              <h1 className="text-4xl font-semibold font-poppins">Hello I'm</h1>
-              <h2 className="text-5xl font-bold text-cyan-400 mb-4">
+            <div className="w-full md:w-3/5 my-10 mt-28">
+              <h1 className="text-2xl font-semibold font-poppins">Hello I'm</h1>
+              <h2 className="text-4xl font-bold text-cyan-400 mb-4 font-popping">
                 Mritunjay Kumar
               </h2>
               <h3 className="text-2xl font-medium text-cyan-400">
@@ -30,34 +42,46 @@ const Home = () => {
 
               {/* Flex container for button and social icons */}
               <div className="flex items-center mt-6 space-x-4">
-                <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-6 rounded-full">
-                  Download CV
-                </button>
+                <a
+                  href="/cv1.pdf" // Path to your CV file
+                  download="My_CV.pdf" // Optional: Rename the file for the user
+                >
+                  <button className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-6 rounded-full">
+                    Download CV
+                  </button>
+                </a>
+
                 {/* Social Icons */}
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://github.com/mritunjay4code"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-cyan-500"
                   >
                     <FaGithub />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/mritunjay-kumar-786203218/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-cyan-500"
                   >
                     <FaLinkedinIn />
                   </a>
                   <a
-                    href="#"
-                    className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-cyan-500"
-                  >
-                    <FaTwitter />
-                  </a>
-                  <a
-                    className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-cyan-500"
-                    href="https://wa.me/+917808273334?text=URL_ENCODED_MESSAGE"
+                    href="https://www.naukri.com/mnjuser/profile?id=&altresid"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-cyan-500"
+                  >
+                    <IoMdContact />
+                  </a>
+                  <a
+                    href="https://wa.me/+917808273334?text=Hi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-cyan-500"
                   >
                     <FaWhatsapp />
                   </a>
@@ -65,36 +89,21 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Section */}
-            <div className="w-1/2 flex justify-center items-center relative ml-20">
-              <div className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 p-1">
+            {/* Right Section (Full Width on md and above) */}
+            <div className="hidden md:flex justify-center items-center my-10 mt-28 w-2/5 h-full">
+              <div className="rounded-full bg-gradient-to-r from-cyan-300 to-blue-100 p-1">
                 <img
-                  className="rounded-full w-96 h-96 object-cover border-4 border-gray-900 "
-                  src="pro.jpeg"
+                  className="rounded-full w-72 xl:w-96 xl:h-96 object-cover border-4 "
+                  src="pro1.png"
                   alt="Profile"
                 />
               </div>
             </div>
           </div>
         </div>
-        {/* <div className="bg-green-500 py-10">
-        <div className="w-full flex justify-center">
-          <ul className="flex justify-center space-x-8 text-white text-3xl">
-            <li className="hover:text-cyan-500">
-              <IoHomeSharp />
-            </li>
-            <li className="hover:text-cyan-500">
-              <IoMdContact />
-            </li>
-            <li className="hover:text-cyan-500">
-              <FaMessage />
-            </li>
-            <li className="hover:text-cyan-500">
-              <IoBagAdd />
-            </li>
-          </ul>
-        </div>
-      </div> */}
+
+        {/* Overlay to darken the video */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-5"></div>
       </div>
     </>
   );

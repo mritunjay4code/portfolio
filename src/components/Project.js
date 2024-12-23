@@ -8,8 +8,8 @@ const Project = () => {
         "A full-featured e-commerce platform built with React, Node.js, and MongoDB.",
       tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
       codeLink: "#",
-      liveDemoLink: "#",
-      image: "ecom.avif",
+      liveDemoLink: "https://gotampandey.vercel.app/",
+      image: "ecom.jpg",
     },
     {
       title: "Task Management App",
@@ -21,13 +21,13 @@ const Project = () => {
       image: "ecom.avif",
     },
     {
-      title: "Task Management App",
+      title: "Tax Help desk",
       description:
         "A collaborative task management application with real-time updates.",
-      tags: ["React", "Firebase", "Material-UI"],
+      tags: ["React", "tailwind", "React Icon"],
       codeLink: "#",
-      liveDemoLink: "#",
-      image: "ecom.avif",
+      liveDemoLink: "https://qa-taxhelpdesk.hmcodelab.com",
+      image: "help.png",
     },
     {
       title: "Task Management App",
@@ -41,12 +41,12 @@ const Project = () => {
   ];
 
   return (
-    <div>
-      <h1>Future project</h1>
-      <div
-        className="container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 gap-6"
-        id="project"
-      >
+    <div id="project" className="bg-gray-200">
+      <h1 className="text-4xl text-center text-[#8c4a2c] p-2">
+        Future project
+      </h1>
+      <hr class="border-t-2 border-gray-300 w-1/5 mx-auto" />
+      <div className="container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((project, index) => (
           <div
             key={index}
